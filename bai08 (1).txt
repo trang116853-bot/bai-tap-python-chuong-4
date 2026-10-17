@@ -1,0 +1,13 @@
+a = int(input("Nhap a: "))
+b = int(input("Nhap b: "))
+print("Cac so nguyen to trong doan [",a,",",b,"] la:")
+for num in range(a, b + 1):
+    if num > 1:
+        so_nto = True
+        for i in range(2, int(num ** 0.5) + 1):
+            if num % i == 0:
+                so_nto = False
+                break
+        if so_nto:
+            print(num, end = " ")
+print()

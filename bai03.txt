@@ -1,0 +1,11 @@
+n = int(input("Nhap n so nguyen: "))
+duong = 0
+am = 0
+for i in range(n):
+    x = int(input(f"Nhap so thu {i + 1}: "))
+    if x > 0:
+        duong += 1
+    elif x < 0:
+        am += 1
+print("So duong la:", duong)
+print("So am la:", am)

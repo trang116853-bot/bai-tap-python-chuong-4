@@ -1,0 +1,37 @@
+a = int(input("Nhập giới hạn dưới a: "))
+b = int(input("Nhập giới hạn trên b: "))
+
+print(f"Các số nguyên tố đặc biệt trong khoảng [{a}, {b}] là:")
+
+for so in range(a, b + 1):
+    if so < 2:
+        continue
+
+    so_nguyen_to_1 = True
+    for i in range(2, int(so**0.5) + 1):
+        if so % i == 0:
+            so_nguyen_to_1 = False
+            break
+
+    if so_nguyen_to_1 == False:
+        continue
+
+    so_dao_nguoc = 0
+    tam = so
+    while tam > 0:
+        so_dao_nguoc = so_dao_nguoc * 10 + (tam % 10)
+        tam = tam // 10
+
+    if so_dao_nguoc < 2:
+        continue
+
+    so_nguyen_to_2 = True
+    for i in range(2, int(so_dao_nguoc**0.5) + 1):
+        if so_dao_nguoc % i == 0:
+            so_nguyen_to_2 = False
+            break
+
+    if so_nguyen_to_2 == True:
+        print(so, end=" ")
+
+    print()
